@@ -1,0 +1,34 @@
+module load R/4.0.2
+file=${1:-'network.plusIN.promoter.18858.PE_nodes.03172010_614ATAAXX_B5_mm9.sorted.bam.txt'}
+ScriptDir=${2:-'/rgs01/project_space/abrahgrp/Baker_DIPG_CRC/common/3DSE/script'}
+#genes=${3:-'Irf2bpl|NM_145836.2'}
+genes=${3:-''}
+cols=${4:-'15,16,23,24,25,26,31,32,42,43,49,53,54'}
+
+# Call Super based on total enhancer signal (either MED1 or H3K27ac)
+
+a=($(head -1 $file))
+cols=(${cols//,/ })
+
+echo -e "#### Selected Measurment For Enhancer Signal Loading ####"
+for i in  ${cols[@]} 
+do
+    echo ${a[i-1]}
+done
+echo -e "Hilighted genes"
+echo $genes
+
+for i in  ${cols[@]} 
+do 
+    #Arrays in Bash are indexed from zero, and in zsh (mac OS default) they're indexed from one.
+    #community.E has the format of inclusiveEnhancerCount,non-inclusiveEnhancerCount
+    if [[ i -eq 25 ]]
+    then
+        cut -f 1,$i $file|tail -n +2|awk -F '[,\t]' -v OFS="\t" '{print $1,$3}' > $file.${a[$i-1]}.txt
+    else
+        cut -f 1,$i $file|tail -n +2 > $file.${a[$i-1]}.txt
+    fi
+    R --save $file.${a[$i-1]} $file.${a[$i-1]}.txt  $genes < $ScriptDir/PriMROSE_callSuper.flexibleID.R
+done
+
+

@@ -59,7 +59,7 @@ associated with each expressed gene.
 
 Briefly, it is based on a modified label-propagation strategy wherein highly interconnected sets of nodes are unbiasedly
 assembled into communities. Any additional CREs connected directly to a given promoter either by high-confidence HiChIP loops 
-or shared INs are then incorporated into that gene’s community. finally, any leftover CREs are added by TADs assignments.
+or shared INs are then incorporated into that gene’s community. Finally, any leftover CREs are added to a gene's community by their concurrence within the same TAD.
 
 
 ## Usage  

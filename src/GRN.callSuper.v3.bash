@@ -1,6 +1,6 @@
 module load R/4.0.2
 file=${1:-'network.plusIN.promoter.18858.PE_nodes.03172010_614ATAAXX_B5_mm9.sorted.bam.txt'}
-ScriptDir=${2:-'/rgs01/project_space/abrahgrp/Baker_DIPG_CRC/common/3DSE/script'}
+ScriptDir=${2:-'script'}
 #genes=${3:-'Irf2bpl|NM_145836.2'}
 genes=${3:-''}
 cols=${4:-'15,16,23,24,25,26,31,32,42,43,49'}

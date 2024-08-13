@@ -7,7 +7,7 @@ script
 input files
 ######
 ID: mES.mm10.newMED1.Ends1000.weightedLP.v28.LoopAndINRajWoGmFilterLarge.EnhOnly.FullEnhancer.PEAnchor.LowerPeakCutOff.woGm.K27acTwoThirds.RevisedLoop.TAD2012Merge.CTCFUpdate.1
-ScriptDir: /research_jude/rgs01_jude/groups/abrahgrp/projects/Baker_DIPG_CRC/common/3DSE/script
+ScriptDir: script
 Promoters: new_mm10.clean.4kbproms.bed.TPM1.filtered.woGm.K27acTwoThirds.txt
 WholeGenes: new_mm10.clean.wholegenes.bed.TPM1.filtered.woGm.K27acTwoThirds.txt
 INs: mES_INs.mm10.Raj.woGm.sorted.FilterLarge.bed (need Raj's input)
@@ -34,7 +34,7 @@ flag for allowing P to P assignment: 0
 ######
 Output files
 ######
-OutDir:/research_jude/rgs01_jude/groups/abrahgrp/projects/Baker_DIPG_CRC/common/3DSE/out_jie/mES.mm10.newMED1.Ends1000.weightedLP.v28.LoopAndINRajWoGmFilterLarge.EnhOnly.FullEnhancer.PEAnchor.LowerPeakCutOff.woGm.K27acTwoThirds.RevisedLoop.TAD2012Merge.CTCFUpdate.1
+OutDir:mES.mm10.newMED1.Ends1000.weightedLP.v28.LoopAndINRajWoGmFilterLarge.EnhOnly.FullEnhancer.PEAnchor.LowerPeakCutOff.woGm.K27acTwoThirds.RevisedLoop.TAD2012Merge.CTCFUpdate.1
 
 "all-in-one" community table:
 network.plusIN.promoter.11050.seed.1.PE_nodes.Kagey_MED1.sorted.bam.txt.update

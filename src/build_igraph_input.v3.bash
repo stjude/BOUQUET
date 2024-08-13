@@ -4,8 +4,8 @@ outdir=${2:-$dir}
 ScriptDir=$3
 CREmapping=$4
 CREmapping_promSub=$5
-EnSignal=${6:-'/rgs01/project_space/abrahgrp/Baker_DIPG_CRC/common/Jie/Generalizable_Code_v2/ref/03172010_614ATAAXX_B5_mm9.sorted.bam'}
-EnControl=${7:-'/rgs01/project_space/abrahgrp/Baker_DIPG_CRC/common/Jie/Generalizable_Code_v2/ref/02202009_313D1AAXX_B3_mm9.sorted.bam'}
+EnSignal=${6:-'03172010_614ATAAXX_B5_mm9.sorted.bam'}
+EnControl=${7:-'02202009_313D1AAXX_B3_mm9.sorted.bam'}
 pergeneINFile=${8:-'pergene.inIN.txt'}
 #/rgs01/project_space/abrahgrp/Baker_DIPG_CRC/common/Jie/archive/HiChIP/GSE62380/bowtie/SRR1613251.sorted.bam
 #/rgs01/project_space/abrahgrp/Baker_DIPG_CRC/common/Jie/archive/HiChIP/GSE62380/bowtie/SRR1613249.sorted.bam

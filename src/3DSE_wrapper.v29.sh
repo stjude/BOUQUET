@@ -97,7 +97,7 @@ help(){
     cat << EOF
     Options:
         -o  OutDir              user specified directory for all output of pipeline, recommond to reflet the unique combination of input files
-        -d  ScriptDir           directory for all 3DSE scripts, default to be "/research_jude/rgs01_jude/groups/abrahgrp/projects/Baker_DIPG_CRC/common/3DSE/script"
+        -d  ScriptDir           directory for all 3DSE scripts, default to be "script"
         -p  Promoters           list of gene promoters, in the format of Chr, Start, End, TranscriptID|GeneID, default to be 4Kb region around TSS of mm9
         -w  WholeGenes          list of whole gene body, in the format of Chr, Start, End, TranscriptID|GeneID, default to be whole gene body of mm9
         -I  INs                 Isolated Neibourghoods, in the format of Chr, Start, End, dault to be INs for mm9
@@ -333,7 +333,7 @@ then
 
     for i in SRR1613251 SRR1613252 SRR299029 SRR1613255
     do
-        intersectBed -c -a RegionsCollapsed.bed -b /research_jude/rgs01_jude/groups/abrahgrp/projects/Baker_DIPG_CRC/common/Jie/archive/HiChIP/GSE62380/bowtie_mm10/$i.bam | awk -F\\t '{print $1 "_" $2 "_" $3 "\t" $4}' > $i.Signal
+        intersectBed -c -a RegionsCollapsed.bed -b $i.bam | awk -F\\t '{print $1 "_" $2 "_" $3 "\t" $4}' > $i.Signal
     done
 
     echo -e bin"\t"H3K27ac"\t"H3K4me3"\t"CTCF"\t"H3K27me3 > pergene.pOtherEnds.looped.enhancer.combined.xls;  paste SRR1613251.Signal SRR1613252.Signal SRR299029.Signal SRR1613255.Signal |cut -f 1,2,4,6,8 >> pergene.pOtherEnds.looped.enhancer.combined.xls
@@ -358,7 +358,7 @@ then
 
     for i in SRR1613251 SRR1613252 SRR299029 SRR1613255
     do
-        intersectBed -c -a RegionsCollapsed.bed -b /research_jude/rgs01_jude/groups/abrahgrp/projects/Baker_DIPG_CRC/common/Jie/archive/HiChIP/GSE62380/bowtie_mm10/$i.bam | awk -F\\t '{print $1 "_" $2 "_" $3 "\t" $4}' > $i.Signal
+        intersectBed -c -a RegionsCollapsed.bed -b $i.bam | awk -F\\t '{print $1 "_" $2 "_" $3 "\t" $4}' > $i.Signal
     done
 
     echo -e bin"\t"H3K27ac"\t"H3K4me3"\t"CTCF"\t"H3K27me3 > pergene.pOtherEnds.looped.noEnhancer.combined.xls;  paste SRR1613251.Signal SRR1613252.Signal SRR299029.Signal SRR1613255.Signal |cut -f 1,2,4,6,8 >> pergene.pOtherEnds.looped.noEnhancer.combined.xls

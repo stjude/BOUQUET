@@ -2,7 +2,6 @@
 
   <h1 align="center">
     <img src="images/bouquet.png" alt="Bouquet logo" width="500">
-    [BOUQUET]
   </h1>
   <p align="center">
    <a href="https://github.com/stjudecloud/bioinformatics-tool-template" target="_blank">
